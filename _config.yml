@@ -1,0 +1,83 @@
+# SKIBERGSTEIGEN — https://skibergsteigen.ir
+# GitHub Pages compatible. Plugins below are in the github-pages whitelist.
+
+title: SKIBERGSTEIGEN
+description: >-
+  Ski mountaineering and ski touring in Iran. Research Damavand, Alam Kuh,
+  Zard Kuh and the Dena mountains, then inquire about an expedition.
+url: "https://skibergsteigen.ir"
+baseurl: ""
+lang: en
+timezone: Asia/Tehran
+
+permalink: pretty
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter_opts:
+    disable: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  destinations:
+    output: true
+    permalink: /destinations/:name/
+  expeditions:
+    output: true
+    permalink: /expeditions/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+  - scope:
+      path: "de"
+    values:
+      lang: de
+  - scope:
+      type: destinations
+    values:
+      layout: destination
+      overlay_header: true
+  - scope:
+      type: expeditions
+    values:
+      layout: expedition
+      overlay_header: true
+  - scope:
+      type: posts
+    values:
+      layout: article
+
+# Logo used by jekyll-seo-tag. Original mark, not a photograph.
+logo: /assets/images/mark.svg
+image: /assets/images/destinations/damavand/south-face-2010-1800.webp
+
+# Inquiry form. Leave endpoint empty until a form service is connected.
+# Example provider: formspree
+# Example endpoint: "https://formspree.io/f/xxxxxxxx"
+# Do not put API keys or passwords here. A form endpoint URL is public by nature;
+# use the provider's form id, never a secret token.
+inquiry:
+  endpoint: ""
+  provider: ""
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - README.md
+  - scripts
+  - assets/fonts/NEWSREADER-OFL.txt
+  - assets/fonts/SOURCE-SANS-3-OFL.txt
+
+sass:
+  style: compressed
