@@ -150,8 +150,51 @@
       event.preventDefault();
       if (summary) {
         summary.hidden = false;
+        summary.classList.remove("is-sent");
         summary.textContent = form.getAttribute("data-not-sent") || "";
       }
+      return;
     }
+    event.preventDefault();
+    var payload = {};
+    Array.prototype.forEach.call(form.elements, function (el) {
+      if (!el.name || el.disabled) return;
+      payload[el.name] = el.value;
+    });
+    if ((payload.company_website || "").trim() !== "") return;
+    payload._replyto = payload.email;
+    delete payload.company_website;
+    var button = form.querySelector('[type="submit"]');
+    if (button) button.disabled = true;
+    fetch(form.action, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(payload)
+    }).then(function (response) {
+      return response.json().then(function (body) {
+        return { ok: response.ok, body: body || {} };
+      });
+    }).then(function (result) {
+      var sent = String(result.body.success) === "true";
+      if (summary) {
+        summary.hidden = false;
+        summary.classList.toggle("is-sent", sent);
+        summary.textContent = sent
+          ? (form.getAttribute("data-sent") || "")
+          : (result.body.message || form.getAttribute("data-failed") || "");
+      }
+      if (sent) form.reset();
+    }).catch(function () {
+      if (summary) {
+        summary.hidden = false;
+        summary.classList.remove("is-sent");
+        summary.textContent = form.getAttribute("data-failed") || "";
+      }
+    }).then(function () {
+      if (button) button.disabled = false;
+    });
   });
 })();

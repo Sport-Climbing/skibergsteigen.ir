@@ -4,7 +4,7 @@ lang: de
 ref: privacy
 title: Datenschutz
 lede: Was diese statische Website mit Angaben macht und was sie noch nicht tut.
-description: Datenschutzhinweise für SKIBERGSTEIGEN. Eine statische Website, keine Konten, und ein Anfrageformular, das nichts speichert, solange kein Formulardienst angeschlossen ist.
+description: Datenschutzhinweise für SKIBERGSTEIGEN. Eine statische Website ohne Konten. Das Anfrageformular schickt die Angaben über FormSubmit per E-Mail.
 permalink: /de/privacy-policy/
 ---
 
@@ -16,7 +16,7 @@ Die Seiten sind Dateien. Sie zu lesen, legt auf diesem Server kein Profil an. Di
 
 ## Das Anfrageformular
 
-Das Formular dieser Fassung ist an keinen Zustelldienst angeschlossen. Ein Absenden speichert Ihre Nachricht nicht. Die Seite sagt das, und sie sagt es wieder, wenn Sie zu senden versuchen. Setzt die Betreiberin oder der Betreiber `inquiry.endpoint` in `_config.yml` auf einen Formulardienst, gehen die Felder an diesen Dienst, zu dessen Bedingungen. Die Felder sind Name, E-Mail, Staatsangehörigkeit, Ziel, Art der Unternehmung, Erfahrung, Daten, Anzahl der Personen und die Nachricht. Ein verstecktes Feld fängt automatisierte Sendungen. Schließen Sie das Formular nicht an, bevor Sie die Datenschutzbedingungen des Dienstes gelesen und den Dienst auf dieser Seite genannt haben.
+Das Absenden der Anfrage schickt die Felder an [FormSubmit](https://formsubmit.co/). Der Dienst mailt sie an die Adresse auf der [Kontaktseite](/de/contact/). Die Felder sind Name, E-Mail, Staatsangehörigkeit, Ziel, Art der Unternehmung, Erfahrung, Daten, Anzahl der Personen und die Nachricht. Ein verstecktes Feld fängt automatisierte Sendungen. Diese Website behält keine eigene Kopie. Es gelten die Bedingungen von FormSubmit. Beim ersten Gebrauch bittet FormSubmit diese Adresse, die Zustellung zu bestätigen, bevor eine Nachricht weitergegeben wird.
 
 ## Kontaktdaten
 
@@ -24,4 +24,4 @@ E-Mail, Telefon und Anschrift erscheinen nur, wenn sie in `_data/site.yml` einge
 
 ## Verantwortliche Stelle
 
-Der Name der verantwortlichen Stelle ist unveröffentlicht, bis er in `_data/site.yml` steht. Eine Datenschutzadresse kommt mit ihm. Bis dahin ist die [Kontaktseite](/de/contact/) die einzige Tür, und sie sagt ehrlich, dass sie nicht angeschlossen ist.
+Der Name der verantwortlichen Stelle ist unveröffentlicht, bis er in `_data/site.yml` steht. Bis dahin ist die [Kontaktseite](/de/contact/) die Tür, und die veröffentlichte E-Mail-Adresse empfängt die Anfrage.

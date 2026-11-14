@@ -60,14 +60,12 @@ defaults:
 logo: /assets/images/mark.svg
 image: /assets/images/destinations/damavand/south-face-2010-1800.webp
 
-# Inquiry form. Leave endpoint empty until a form service is connected.
-# Example provider: formspree
-# Example endpoint: "https://formspree.io/f/xxxxxxxx"
-# Do not put API keys or passwords here. A form endpoint URL is public by nature;
-# use the provider's form id, never a secret token.
+# Inquiry form. The endpoint is a public FormSubmit address, not a secret.
+# The first real submission makes FormSubmit email me@kavehrs.com a confirmation
+# link. Messages are delivered only after that link is opened.
 inquiry:
-  endpoint: ""
-  provider: ""
+  endpoint: "https://formsubmit.co/ajax/me@kavehrs.com"
+  provider: formsubmit
 
 exclude:
   - Gemfile

@@ -582,6 +582,7 @@ h1, h2, h3, .hero__title, .wordmark {
 }
 .form-row textarea { min-height: 9rem; resize: vertical; }
 .form-error { margin: 0; color: var(--danger); font-size: 0.95rem; }
+.form-error.is-sent { color: var(--glacier); }
 .form-error:empty, .form-error[hidden] { display: none; }
 .form-note {
   padding: 0.9rem 1rem;

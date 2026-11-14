@@ -4,7 +4,7 @@ lang: de
 ref: contact
 title: Kontakt
 lede: Expeditionsanfragen und die Kontaktdaten, die wirklich veröffentlicht sind.
-description: Kontakt zu SKIBERGSTEIGEN fürs Skibergsteigen im Iran. Das Formular sagt selbst, wenn noch kein Zustelldienst angeschlossen ist.
+description: Kontakt zu SKIBERGSTEIGEN fürs Skibergsteigen im Iran. Das Formular schickt die Nachricht an die veröffentlichte E-Mail-Adresse.
 permalink: /de/contact/
 ---
 

@@ -4,7 +4,7 @@ lang: en
 ref: contact
 title: Contact
 lede: Expedition inquiries, and the contact details that have actually been published.
-description: Contact SKIBERGSTEIGEN about ski mountaineering in Iran. The inquiry form explains itself when no delivery service is connected.
+description: Contact SKIBERGSTEIGEN about ski mountaineering in Iran. The inquiry form emails the message to the published address.
 permalink: /contact/
 ---
 

@@ -49,6 +49,10 @@ en:
   inquiry_not_sent: >-
     This inquiry was not sent. The form service is not configured, so
     nothing was stored.
+  inquiry_sent: Your inquiry was emailed.
+  inquiry_failed: >-
+    Your inquiry was not sent. Try again, or write to the email address
+    on this page.
   inquiry_config_hint: >-
     The site owner connects delivery by setting inquiry.endpoint in _config.yml.
   send: Send inquiry
@@ -170,6 +174,10 @@ de:
   inquiry_not_sent: >-
     Diese Anfrage wurde nicht gesendet. Der Formulardienst ist nicht
     eingerichtet, es wurde nichts gespeichert.
+  inquiry_sent: Ihre Anfrage wurde per E-Mail gesendet.
+  inquiry_failed: >-
+    Ihre Anfrage wurde nicht gesendet. Versuchen Sie es erneut oder
+    schreiben Sie an die E-Mail-Adresse auf dieser Seite.
   inquiry_config_hint: >-
     Die Zustellung richtet die Betreiberin oder der Betreiber ein, indem
     inquiry.endpoint in der Datei _config.yml gesetzt wird.

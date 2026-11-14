@@ -26,4 +26,4 @@ English is the default. German is the second language, written for readers who s
 
 ## A conversation, not a checkout
 
-If a journey is worth talking about, the [inquiry](/contact/#inquiry) is the place. Nothing is stored until a form service is connected. That limit is described on the contact page rather than hidden.
+If a journey is worth talking about, the [inquiry](/contact/#inquiry) is the place. The message is emailed to the address on the contact page. The site does not keep its own copy.

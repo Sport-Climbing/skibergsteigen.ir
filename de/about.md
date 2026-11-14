@@ -26,4 +26,4 @@ Englisch ist die Ausgangssprache. Deutsch ist die zweite, geschrieben für Leser
 
 ## Ein Gespräch, keine Kasse
 
-Wenn eine Reise das Reden wert ist, ist die [Anfrage](/de/contact/#inquiry) der Ort. Es wird nichts gespeichert, solange kein Formulardienst angeschlossen ist. Diese Grenze steht auf der Kontaktseite, sie wird nicht versteckt.
+Wenn eine Reise das Reden wert ist, ist die [Anfrage](/de/contact/#inquiry) der Ort. Die Nachricht geht per E-Mail an die Adresse auf der Kontaktseite. Die Website behält keine eigene Kopie.

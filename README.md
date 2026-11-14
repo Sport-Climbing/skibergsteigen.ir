@@ -220,19 +220,19 @@ Structured data is limited to what the pages support: `Organization` and `WebSit
 
 ## Inquiry form
 
-The form is on every contact page and every expedition page. It checks the fields in the browser and does not show a success message.
+The form is on every contact page and every expedition page. It checks the fields in the browser. A success line appears only after FormSubmit accepts the message.
 
-Delivery is **off** until you set an endpoint in `_config.yml`:
+Delivery is set in `_config.yml`:
 
 ```yaml
 inquiry:
-  endpoint: "https://formspree.io/f/xxxxxxxx"
-  provider: formspree
+  endpoint: "https://formsubmit.co/ajax/me@kavehrs.com"
+  provider: formsubmit
 ```
 
-Use the provider’s public form URL. Do not put an API key or a password in the file. The field names posted are `name`, `email`, `nationality`, `destination`, `experience_type`, `experience_level`, `dates`, `participants`, and `message`. A honeypot field is named `company_website`.
+The address is also the published contact email in `_data/site.yml`. Change both together if the mailbox changes. FormSubmit emails that address a confirmation link the first time the form is used. Until that link is opened, inquiries are not delivered. There is no API key in the repository. The field names posted are `name`, `email`, `nationality`, `destination`, `experience_type`, `experience_level`, `dates`, `participants`, and `message`. A honeypot field is named `company_website`.
 
-While `endpoint` is empty, the form explains that nothing is stored, and a submit attempt is cancelled with the same explanation. After you set an endpoint, the browser posts the form to that URL. Point the provider’s confirmation at a page you control only if you are comfortable with what that page claims. This site does not include a fake “message sent” screen.
+While `endpoint` is empty, the form explains that nothing is sent, and a submit attempt is cancelled with the same explanation.
 
 Rebuild after changing `_config.yml`.
 

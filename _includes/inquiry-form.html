@@ -11,7 +11,12 @@
     <p class="form-note">{{ t.inquiry_disabled }} {{ t.inquiry_config_hint }}</p>
   {% endunless %}
   {% capture error_json %}{"name":{{ t.form.errors.name | jsonify }},"email":{{ t.form.errors.email | jsonify }},"nationality":{{ t.form.errors.nationality | jsonify }},"destination":{{ t.form.errors.destination | jsonify }},"experience_type":{{ t.form.errors.experience_type | jsonify }},"experience_level":{{ t.form.errors.experience_level | jsonify }},"dates":{{ t.form.errors.dates | jsonify }},"participants":{{ t.form.errors.participants | jsonify }},"message":{{ t.form.errors.message | jsonify }},"summary":{{ t.form.errors.summary | jsonify }}}{% endcapture %}
-  <form class="form" action="{% if configured %}{{ endpoint }}{% else %}{{ page.url | relative_url }}#inquiry{% endif %}" method="post" novalidate data-inquiry-form data-configured="{% if configured %}true{% else %}false{% endif %}" data-errors='{{ error_json | strip }}' data-not-sent="{{ t.inquiry_not_sent | escape }}">
+  <form class="form" action="{% if configured %}{{ endpoint }}{% else %}{{ page.url | relative_url }}#inquiry{% endif %}" method="post" novalidate data-inquiry-form data-configured="{% if configured %}true{% else %}false{% endif %}" data-errors='{{ error_json | strip }}' data-not-sent="{{ t.inquiry_not_sent | escape }}" data-sent="{{ t.inquiry_sent | escape }}" data-failed="{{ t.inquiry_failed | escape }}">
+    {% if configured %}
+      <input type="hidden" name="_subject" value="SKIBERGSTEIGEN expedition inquiry">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+    {% endif %}
     <p class="form-error" data-form-summary role="alert" hidden></p>
     <div class="hp" aria-hidden="true">
       <label for="company-website">{{ t.honeypot }}</label>
