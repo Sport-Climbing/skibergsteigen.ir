@@ -11,11 +11,12 @@ layout: default
   {% assign hero_caption = hero.caption_en %}
 {% endif %}
 
-<section class="hero" aria-label="{{ home.hero_title }}">
-  <div class="hero__media">
+<section class="hero hero--3d" aria-label="{{ home.hero_title }}" data-hero-3d>
+  <div class="hero__media" data-hero-media>
     {% assign hero_id = home.hero_image %}
     {% include picture.html id=hero_id loading="eager" fetchpriority="high" sizes="100vw" %}
   </div>
+  <canvas class="hero__snow" data-hero-snow aria-hidden="true"></canvas>
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="hero__content">
     <p class="eyebrow">{{ home.eyebrow }}</p>
@@ -92,15 +93,16 @@ layout: default
   </div>
 </section>
 
-<section class="section section--paper" id="photographs">
+<section class="section section--alpine section--theater" id="photographs">
   <div class="wrap-wide">
     <div class="section-head wrap" style="width:auto;margin-inline:0;">
-      <p class="eyebrow">{{ home.gallery_kicker }}</p>
+      <p class="eyebrow eyebrow--on-alpine">{{ home.gallery_kicker }}</p>
       <h2>{{ home.gallery_title }}</h2>
+      <p class="lede lede--on-alpine">{{ home.gallery_3d_intro }}</p>
     </div>
     {% assign shots = home.gallery %}
-    {% include gallery.html shots=shots %}
-    <p class="gallery-note">{{ home.gallery_note }} <a href="{{ site.data.translations['photo-credits'][page.lang] | relative_url }}">{{ t.credits }}</a></p>
+    {% include gallery-3d.html shots=shots %}
+    <p class="gallery-note gallery-note--on-alpine">{{ home.gallery_note }} <a href="{{ site.data.translations['photo-credits'][page.lang] | relative_url }}">{{ t.credits }}</a></p>
   </div>
 </section>
 

@@ -19,6 +19,11 @@ en:
   related_articles: Further reading
   gallery: Photographs
   enlarge: Enlarge photograph
+  theater_label: Three-dimensional photograph theater
+  theater_hint: Drag to rotate · click a panel to enlarge
+  theater_prev: Previous photograph
+  theater_next: Next photograph
+  theater_goto: Show photograph
   close: Close
   photo_by: Photograph by
   adapted: Resized WebP copy.
@@ -143,6 +148,11 @@ de:
   related_articles: Weitere Beiträge
   gallery: Fotografien
   enlarge: Fotografie vergrößern
+  theater_label: Dreidimensionales Fototheater
+  theater_hint: Ziehen zum Drehen · Fläche anklicken zum Vergrößern
+  theater_prev: Vorherige Fotografie
+  theater_next: Nächste Fotografie
+  theater_goto: Fotografie zeigen
   close: Schließen
   photo_by: Foto
   adapted: Verkleinerte WebP-Fassung.

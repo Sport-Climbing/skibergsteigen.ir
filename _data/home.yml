@@ -20,8 +20,11 @@ en:
   experiences_title: Ski mountaineering, named plainly
   why_kicker: Why Iran
   why_title: What is actually distinctive
-  gallery_kicker: Photographs
-  gallery_title: The ranges, as they have been photographed
+  gallery_kicker: Photographs in three dimensions
+  gallery_title: Turn the ranges in space
+  gallery_3d_intro: >-
+    Drag the ring, use the arrows, or let it drift. Each panel is a licensed
+    photograph of Iranian mountains, held in a three-dimensional theater.
   gallery_note: >-
     These are licensed photographs of Iranian mountains. Where a frame is
     not winter, or not a ski line, the caption says so. Action photographs
@@ -109,8 +112,12 @@ de:
   experiences_title: Skibergsteigen, klar benannt
   why_kicker: Warum Iran
   why_title: Was tatsächlich anders ist
-  gallery_kicker: Fotografien
-  gallery_title: Die Gebirge, so wie sie fotografiert wurden
+  gallery_kicker: Fotografien in drei Dimensionen
+  gallery_title: Die Gebirge im Raum drehen
+  gallery_3d_intro: >-
+    Ziehen Sie den Ring, nutzen Sie die Pfeile oder lassen Sie ihn treiben.
+    Jede Fläche ist eine lizenzierte Fotografie iranischer Berge in einem
+    dreidimensionalen Theater.
   gallery_note: >-
     Das sind lizenzierte Fotografien iranischer Berge. Wenn eine Aufnahme
     kein Winter und keine Skilinie ist, steht das in der Bildunterschrift.
