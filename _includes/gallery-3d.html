@@ -1,0 +1,71 @@
+{% assign t = site.data.ui[page.lang] %}
+{% assign shot_count = include.shots.size %}
+<div class="theater" data-theater data-count="{{ shot_count }}">
+  <p class="theater__hint">{{ t.theater_hint }}</p>
+  <div class="theater__stage" data-theater-stage tabindex="0" role="region" aria-label="{{ t.theater_label }}">
+    <div class="theater__ring" data-theater-ring style="--n: {{ shot_count }}; --angle: 0deg;">
+      {% for shot in include.shots %}
+        {% assign matches = site.data.images | where: "id", shot.id %}
+        {% assign image = matches[0] %}
+        {% if image %}
+          {% if page.lang == "de" %}
+            {% assign alt = image.alt_de %}
+            {% assign caption = image.caption_de %}
+            {% assign location = image.location_de %}
+          {% else %}
+            {% assign alt = image.alt_en %}
+            {% assign caption = image.caption_en %}
+            {% assign location = image.location_en %}
+          {% endif %}
+          {% capture credit %}{{ caption }} {{ t.photo_by }} {{ image.photographer }}, {{ image.license }}.{% endcapture %}
+          <figure
+            class="theater__panel{% if forloop.first %} is-active{% endif %}"
+            data-theater-panel
+            data-index="{{ forloop.index0 }}"
+            style="--i: {{ forloop.index0 }};"
+            data-caption="{{ caption | escape }}"
+            data-location="{{ location | escape }}"
+            data-credit="{{ credit | escape }}">
+            <button
+              type="button"
+              class="theater__open"
+              data-lightbox-src="{{ image.src | relative_url }}"
+              data-lightbox-alt="{{ alt | escape }}"
+              data-lightbox-caption="{{ credit | escape }}"
+              aria-label="{{ t.enlarge }}: {{ caption | escape }}">
+              <img
+                src="{{ image.src_small | relative_url }}"
+                srcset="{{ image.src_small | relative_url }} 960w, {{ image.src | relative_url }} {{ image.width }}w"
+                sizes="(min-width: 900px) 28vw, 72vw"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+                alt="{{ alt | escape }}"
+                loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                decoding="async"
+                draggable="false">
+            </button>
+          </figure>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="theater__bar">
+    <button type="button" class="theater__nav" data-theater-prev aria-label="{{ t.theater_prev }}">‹</button>
+    <div class="theater__meta">
+      <p class="theater__caption" data-theater-caption></p>
+      <p class="theater__location" data-theater-location></p>
+    </div>
+    <button type="button" class="theater__nav" data-theater-next aria-label="{{ t.theater_next }}">›</button>
+  </div>
+  <div class="theater__dots" data-theater-dots role="tablist" aria-label="{{ t.theater_label }}">
+    {% for shot in include.shots %}
+      <button
+        type="button"
+        class="theater__dot{% if forloop.first %} is-active{% endif %}"
+        data-theater-dot
+        data-index="{{ forloop.index0 }}"
+        aria-label="{{ t.theater_goto }} {{ forloop.index }}"
+        {% if forloop.first %}aria-current="true"{% endif %}></button>
+    {% endfor %}
+  </div>
+</div>
